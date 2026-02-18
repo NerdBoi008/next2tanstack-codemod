@@ -41,7 +41,6 @@ jobs:
         run: npm pack --dry-run
 
   publish:
-    if: github.event_name == 'release'
     needs: validate
     runs-on: ubuntu-latest
     steps:
