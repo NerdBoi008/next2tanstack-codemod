@@ -1,5 +1,5 @@
 import type { Edit } from "@ast-grep/napi";
-import type { SubTransform } from "@/types/index.ts";
+import type { SubTransform } from "../types/index.js";
 
 /**
  * Transforms Next.js App Router file structure to TanStack Router conventions

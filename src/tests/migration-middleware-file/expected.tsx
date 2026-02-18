@@ -3,5 +3,5 @@ import { NextResponse } from "next/server";
 
 export function middleware() {
   // TODO(tanstack-migrate): manual migration required for `NextResponse` usage outside server actions.
-  return NextResponse.next();
+return NextResponse.next();
 }

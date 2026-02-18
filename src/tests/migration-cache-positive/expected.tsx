@@ -5,6 +5,6 @@ const loadUser = cache(async (id: string) => ({ id }));
 
 export async function mutateUser(id: string) {
   // TODO(tanstack-migrate): manual migration required for `revalidatePath()`; map to TanStack Start/Query caching strategy.
-  revalidatePath(`/users/${id}`);
+revalidatePath(`/users/${id}`);
   return loadUser(id);
 }

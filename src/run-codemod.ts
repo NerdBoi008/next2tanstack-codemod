@@ -1,9 +1,10 @@
+#!/usr/bin/env node
 import { Lang, parse } from "@ast-grep/napi";
 import * as fs from "node:fs/promises";
 import * as path from "node:path";
 import { fileURLToPath } from "node:url";
-import type { CodemodRoot } from "./types/index.ts";
-import transform from "./scripts/codemod.ts";
+import type { CodemodRoot } from "./types/index.js";
+import transform from "./scripts/codemod.js";
 
 const CODE_EXTENSIONS = new Set([".ts", ".tsx", ".js", ".jsx"]);
 const SKIP_DIRECTORIES = new Set([

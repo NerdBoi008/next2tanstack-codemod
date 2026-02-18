@@ -25,7 +25,9 @@
     }
   },
   "exclude": [
+    "src/tests",
     "tests",
+    "dist",
     "node_modules"
   ]
 }

@@ -1,5 +1,5 @@
 import type { Edit } from "@ast-grep/napi";
-import type { SubTransform } from "@/types/index.ts";
+import type { SubTransform } from "../types/index.js";
 
 type ImportBinding = {
   imported: string;

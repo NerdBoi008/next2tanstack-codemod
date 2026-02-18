@@ -1,0 +1,8 @@
+# Redundant with package.json "files", but kept for clarity.
+src/
+.github/
+node_modules/
+dist/**/*.map
+tsconfig*.json
+pnpm-lock.yaml
+DEVELOPER-WORKFLOW.md

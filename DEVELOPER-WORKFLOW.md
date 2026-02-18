@@ -16,16 +16,16 @@ Recommended tools:
 ## 2. Create a Change
 
 1. Create a branch for one focused change.
-2. Update or add transforms in `transforms/*.ts`.
-3. If needed, update orchestration in `scripts/run-codemod.ts` and `scripts/codemod.ts`.
+2. Update or add transforms in `src/transforms/*.ts`.
+3. If needed, update orchestration in `src/run-codemod.ts` and `src/scripts/codemod.ts`.
 4. Keep behavior deterministic. If behavior is ambiguous, prefer TODO comments over risky rewrites.
 
 ## 3. Add/Update Tests
 
 Test format is fixture-based:
 
-- `tests/<case-name>/input.tsx`
-- `tests/<case-name>/expected.tsx`
+- `src/tests/<case-name>/input.tsx`
+- `src/tests/<case-name>/expected.tsx`
 
 Guidelines:
 
@@ -47,13 +47,13 @@ pnpm test
 Use dry-run + diff on a sample target project:
 
 ```sh
-npx tsx ./scripts/run-codemod.ts <target-path> --dry-run --diff
+npx tsx ./src/run-codemod.ts <target-path> --dry-run --diff
 ```
 
 Then apply:
 
 ```sh
-npx tsx ./scripts/run-codemod.ts <target-path>
+npx tsx ./src/run-codemod.ts <target-path>
 ```
 
 Review expectations:
@@ -81,4 +81,3 @@ Before publish:
 - If `pnpm test` or `pnpm check-types` fails with:
   `Cannot find module './codemod.ts' imported from scripts/run-codemod.ts`
   then restore/fix `scripts/codemod.ts` or update the import path in `scripts/run-codemod.ts`.
-

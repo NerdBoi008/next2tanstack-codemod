@@ -2,17 +2,43 @@
   "name": "next2tanstack",
   "version": "0.1.0",
   "description": "Codemod for migrating Next.js App Router projects to TanStack Start",
+  "homepage": "https://github.com/NerdBoi008/next2tanstack-codemod#readme",
+  "bugs": {
+    "url": "https://github.com/NerdBoi008/next2tanstack-codemod/issues"
+  },
   "author": "NerdBoi008",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/NerdBoi008/next2tanstack-codemod.git"
   },
   "type": "module",
+  "main": "./dist/run-codemod.js",
+  "exports": {
+    ".": "./dist/run-codemod.js"
+  },
+  "bin": {
+    "next2tanstack": "./dist/run-codemod.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
   "scripts": {
-    "test": "node ./scripts/test-codemod.ts",
+    "clean": "node --eval \"import('node:fs').then((fs) => fs.rmSync('dist', { recursive: true, force: true }))\"",
+    "build": "pnpm clean && tsc -p tsconfig.build.json",
+    "prepack": "pnpm build",
+    "test": "pnpm build && node ./dist/test-codemod.js",
     "check-types": "tsc --noEmit",
-    "codemod": "node ./scripts/run-codemod.ts .",
-    "codemod:dry": "node ./scripts/run-codemod.ts . --dry-run"
+    "codemod": "pnpm build && node ./dist/run-codemod.js .",
+    "codemod:dry": "pnpm build && node ./dist/run-codemod.js . --dry-run"
   },
   "keywords": [
     "transformation",
@@ -22,7 +48,7 @@
     "codemod"
   ],
   "license": "MIT",
-  "packageManager": "pnpm@10.29.3",
+  "packageManager": "pnpm@10.30.0",
   "dependencies": {
     "@ast-grep/napi": "^0.40.5"
   },

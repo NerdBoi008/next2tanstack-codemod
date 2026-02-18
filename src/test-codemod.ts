@@ -1,6 +1,6 @@
 import * as fs from "node:fs/promises";
 import * as path from "node:path";
-import { runCodemodOnFile } from "./run-codemod.ts";
+import { runCodemodOnFile } from "./run-codemod.js";
 
 type TestCase = {
   name: string;
@@ -9,7 +9,7 @@ type TestCase = {
 };
 
 function normalize(value: string): string {
-  return value.replace(/\r\n/g, "\n").trimEnd();
+  return value.replace(/\r\n/g, "\n").trim();
 }
 
 async function discoverTests(rootDir: string): Promise<TestCase[]> {
@@ -47,7 +47,7 @@ async function runCase(testCase: TestCase): Promise<string | null> {
 }
 
 async function main(): Promise<void> {
-  const testsDir = path.resolve(process.cwd(), "tests");
+  const testsDir = path.resolve(process.cwd(), "src/tests");
   const testCases = await discoverTests(testsDir);
   let failed = 0;
 

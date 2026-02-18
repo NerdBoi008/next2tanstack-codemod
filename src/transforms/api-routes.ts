@@ -1,4 +1,4 @@
-import type { SubTransform } from "@/types/index.ts";
+import type { SubTransform } from "../types/index.js";
 import type { Edit } from "@ast-grep/napi";
 
 export const nextApiRouteTransform: SubTransform = async (root) => {

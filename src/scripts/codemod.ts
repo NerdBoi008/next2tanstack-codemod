@@ -1,16 +1,16 @@
 import type { Edit } from "@ast-grep/napi";
 import type { CodemodTransform } from "../types/index.js";
 import * as fsp from "node:fs/promises";
-import { nextImageTransform } from "../transforms/next-image.ts";
-import { nextLinkTransform } from "../transforms/next-link.ts";
-import { nextServerFunctionTransform } from "../transforms/next-server-actions.ts";
-import { nextUseClientDirectiveTransform } from "../transforms/next-use-client.ts";
-import { nextApiRouteTransform } from "../transforms/api-routes.ts";
-import { nextManualMigrationTodoTransform } from "../transforms/manual-migration-todos.ts";
+import { nextImageTransform } from "../transforms/next-image.js";
+import { nextLinkTransform } from "../transforms/next-link.js";
+import { nextServerFunctionTransform } from "../transforms/next-server-actions.js";
+import { nextUseClientDirectiveTransform } from "../transforms/next-use-client.js";
+import { nextApiRouteTransform } from "../transforms/api-routes.js";
+import { nextManualMigrationTodoTransform } from "../transforms/manual-migration-todos.js";
 import {
   nextToTanstackFileStructureTransform,
   nextRouteGroupsTransform,
-} from "../transforms/route-renames.ts";
+} from "../transforms/route-renames.js";
 
 let hasLoggedDeleteWarning = false;
 let hasLoggedConfigWarning = false;
