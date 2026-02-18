@@ -1,0 +1,33 @@
+{
+  "name": "next2tanstack",
+  "version": "0.1.0",
+  "description": "Codemod for migrating Next.js App Router projects to TanStack Start",
+  "author": "NerdBoi008",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NerdBoi008/next2tanstack-codemod.git"
+  },
+  "type": "module",
+  "scripts": {
+    "test": "node ./scripts/test-codemod.ts",
+    "check-types": "tsc --noEmit",
+    "codemod": "node ./scripts/run-codemod.ts .",
+    "codemod:dry": "node ./scripts/run-codemod.ts . --dry-run"
+  },
+  "keywords": [
+    "transformation",
+    "nextjs",
+    "tanstack",
+    "migration",
+    "codemod"
+  ],
+  "license": "MIT",
+  "packageManager": "pnpm@10.29.3",
+  "dependencies": {
+    "@ast-grep/napi": "^0.40.5"
+  },
+  "devDependencies": {
+    "@types/node": "^25.2.3",
+    "typescript": "^5.9.3"
+  }
+}
